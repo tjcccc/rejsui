@@ -1,0 +1,21 @@
+{
+  "name": "sjsx",
+  "version": "0.0.1",
+  "description": "SwiftUI-like JSX",
+  "main": "index.js",
+  "repository": "https://github.com/tjcccc/sjsx.git",
+  "author": "seesaw game <tttjjjccc@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "html-react-parser": "^1.2.8",
+    "react": "^17.0.2"
+  }
+}
