@@ -1,14 +1,22 @@
-import Div from './syntaxes/div.js';
 import parse from 'html-react-parser';
+import HStack from './syntaxes/h-stack';
+import VStack from './syntaxes/v-stack';
+import Div from './syntaxes/div';
+import H from './syntaxes/h';
+import P from './syntaxes/p';
 
-const sjsx = (...args) => {
+const declare = (...args) => {
   return parse(args.map(element => element).join(''));
 };
 
-export default sjsx;
+export default declare;
 
 export {
-  Div
+  HStack,
+  VStack,
+  Div,
+  H,
+  P
 }
 
 

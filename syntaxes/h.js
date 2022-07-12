@@ -1,4 +1,4 @@
-const Div = ([...children], {...attributes}) => {
+const H = (tag, [...children], {...attributes}) => {
 
   const flatAttributes = Object.entries(attributes).map(([key, value]) => {
     if (key == 'className') {
@@ -12,11 +12,8 @@ const Div = ([...children], {...attributes}) => {
   }
   ).join(' ');
 
-  const div = `<div ${flatAttributes}>`;
-
-  return `${div}${children.map(child => {
-    return typeof child === 'object' ? Object.values(child)[0] : child;
-  }).join('')}</div>`;
+  const hTag = 'h' + (parseInt(tag) > 0 && parseInt(tag) > 7 ? parseInt(tag).toString() : '1');
+  return `<${hTag} ${flatAttributes}>${children.map(child => child).join('')}</${hTag}>`
 };
 
-export default Div;
+export default H;
