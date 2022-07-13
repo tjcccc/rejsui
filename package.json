@@ -1,6 +1,6 @@
 {
   "name": "sjsx-ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "SwiftUI-like JSX",
   "main": "index.js",
   "repository": "https://github.com/tjcccc/sjsx.git",
@@ -39,7 +39,9 @@
     "dev": "webpack server"
   },
   "files": [
-    "index.js, index.js.map, index.js.LICENSE.txt"
+    "index.js",
+    "index.js.map",
+    "index.js.LICENSE.txt"
   ],
   "homepage": "https://github.com/tjcccc/sjsx"
 }
