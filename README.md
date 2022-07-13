@@ -4,6 +4,14 @@ SwiftUI-like JSX
 
 (Developing)
 
+## Install
+
+```shell
+npm i sjsx-ui
+// or
+yarn add sjsx-ui
+```
+
 ## Usage
 
 Import main function and components you need:

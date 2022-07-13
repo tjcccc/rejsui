@@ -1,17 +1,17 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: "./playground/index.js",
+  mode: 'development',
+  entry: './playground/index.js',
   output: {
-    path: path.resolve(__dirname, "playground/build"),
-    filename: "main.js"
+    path: path.resolve(__dirname, 'playground/build'),
+    filename: 'playground.js'
   },
-  target: "web",
+  target: 'web',
   devServer: {
-    port: "3500",
-    static: ["./public"],
+    port: '3500',
+    static: ['./public'],
     open: true,
     hot: true,
     liveReload: true

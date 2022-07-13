@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import declare, { HStack, VStack, Div, H, P } from '../sjsx.js';
+import declare, { HStack, VStack, Div, H, P } from '../index.js';
 
 const App = () => {
 
