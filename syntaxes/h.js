@@ -12,7 +12,7 @@ const H = (tag, [...children], {...attributes}) => {
   }
   ).join(' ');
 
-  const hTag = 'h' + (parseInt(tag) > 0 && parseInt(tag) > 7 ? parseInt(tag).toString() : '1');
+  const hTag = 'h' + (parseInt(tag) > 0 && parseInt(tag) < 7 ? parseInt(tag).toString() : '1');
   return `<${hTag} ${flatAttributes}>${children.map(child => child).join('')}</${hTag}>`
 };
 
