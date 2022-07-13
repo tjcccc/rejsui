@@ -17,7 +17,7 @@ yarn add sjsx-ui
 Import main function and components you need:
 
 ```jsx
-import declare, { HStack, VStack, Div, H, P } from 'sjsx';
+import declare, { HStack, VStack, Div, H, P } from 'sjsx-ui';
 ```
 
 In React component, use `declare()` in the `return ()` to replace classic JSX:
@@ -44,7 +44,7 @@ const App = () => {
 
 ### Div
 
-`Div()` has 2 parameters, the first one is content of `<div>`, the second is the attributes of it.
+`Div()` has two parameters. The first is the content of `<div>`, and the other is its attributes.
 
 ```jsx
 Div([
@@ -55,7 +55,7 @@ Div([
   })
 ```
 
-it will be transferred to such a JSX code:
+it will be parsed to such a JSX code:
 
 ```jsx
 <div className='article' style={{ padding: '2px 8px' }}>
@@ -63,11 +63,11 @@ it will be transferred to such a JSX code:
 </div>
 ```
 
-This it the common usage of other components.
+This is the common usage of other components.
 
 ### H
 
-`H()` has 3 parameters, the first one to specify what `<h?>` is. For example, `H(1, ...)` means `<h1>`, the second is its content, the last one is its attributes.
+`H()` has three parameters. The first is to specify what `<h?>` is. For example, `H(1, ...)` means `<h1>`. The second is its content. The last is its attributes.
 
 ```jsx
 // <h1 style={{ color: '#0000ff' }}>This is h1</h1>
@@ -79,7 +79,7 @@ H(2, 'This is h2')
 
 ### HStack, VStack
 
-Like SwiftUI, these two component is used for layout.
+Like SwiftUI, these two components are used for layout.
 
 HStack is for horizontal layout. VStack is for vertical layout.
 
@@ -90,7 +90,7 @@ HStack([
 ])
 ```
 
-It will be transferred to such a JSX code:
+It will be parsed to such a JSX code:
 
 ```jsx
 <div style={{ display:flex; flexDirection: row }}>
