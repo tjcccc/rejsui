@@ -5,11 +5,11 @@ import Div from './syntaxes/div';
 import H from './syntaxes/h';
 import P from './syntaxes/p';
 
-const declare = (...args) => {
+const View = (...args) => {
   return parse(args.map(element => element).join(''));
 };
 
-export default declare;
+export default View;
 
 export {
   HStack,
@@ -18,5 +18,3 @@ export {
   H,
   P
 }
-
-

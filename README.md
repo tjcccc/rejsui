@@ -42,6 +42,25 @@ const App = () => {
 
 ```
 
+### Void Elements
+
+All [void elements (self-closing tags)](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#syntax-elements) can be invoked by a function with the same capitalized name. The attributes of a tag should be set as an object as related function's arguments.
+
+```jsx
+// <img src="example.jpg" title="Example" alt="image" />
+Img({
+  src: 'example.jpg',
+  title: 'Example',
+  alt: 'image'
+})
+```
+
+### Common Elements
+
+[All common elements](https://www.w3.org/TR/2011/WD-html-markup-20110113/elements.html)
+
+(TODO)
+
 ### Div
 
 `Div()` has two parameters. The first is the content of `<div>`, and the other is its attributes.
