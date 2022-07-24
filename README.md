@@ -1,4 +1,4 @@
-# sjsx
+# sjsx-ui
 
 SwiftUI-like JSX
 
@@ -8,7 +8,7 @@ SwiftUI-like JSX
 
 ```shell
 npm i sjsx-ui
-// or
+# or
 yarn add sjsx-ui
 ```
 
@@ -17,15 +17,15 @@ yarn add sjsx-ui
 Import main function and components you need:
 
 ```jsx
-import declare, { HStack, VStack, Div, H, P } from 'sjsx-ui';
+import View, { HStack, VStack, Div, H, P } from 'sjsx-ui';
 ```
 
-In React component, use `declare()` in the `return ()` to replace classic JSX:
+In React component, use `View()` in the `return ()` to replace classic JSX:
 
 ```jsx
 const App = () => {
   return (
-    declare(
+    View(
       // SJSX code
 
       // h1
@@ -44,7 +44,9 @@ const App = () => {
 
 ### Void Elements
 
-All [void elements (self-closing tags)](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#syntax-elements) can be invoked by a function with the same capitalized name. The attributes of a tag should be set as an object as related function's arguments.
+All [void elements (self-closing tags)](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#syntax-elements) can be invoked by a function with the same capitalized name.
+
+The attributes of a tag should be set as an object as related function's arguments.
 
 ```jsx
 // <img src="example.jpg" title="Example" alt="image" />
@@ -57,44 +59,26 @@ Img({
 
 ### Common Elements
 
-[All common elements](https://www.w3.org/TR/2011/WD-html-markup-20110113/elements.html)
+All [common elements](https://www.w3.org/TR/2011/WD-html-markup-20110113/elements.html) can be invoked by a function with the same capitalized name.
 
-(TODO)
-
-### Div
-
-`Div()` has two parameters. The first is the content of `<div>`, and the other is its attributes.
+There need two arguments. The first one is an array of its content. The second one is the attributes object.
 
 ```jsx
+// <div className='article' style={{padding: '2px 8px'}}>
+//   <h1>Title</h1>
+//   <p>Content.</p>
+// </div>
+
 Div([
-  Div('content')
-  ], {
-    className: 'article',
-    style: { padding: '2px 8px' }
-  })
+  H1(['Title']), // or H1('Title')
+  P(['Content'])
+], {
+  className: 'article',
+  style: { padding: '2px 8px' }
+})
 ```
 
-it will be parsed to such a JSX code:
-
-```jsx
-<div className='article' style={{ padding: '2px 8px' }}>
-  <div>content</div>
-</div>
-```
-
-This is the common usage of other components.
-
-### H
-
-`H()` has three parameters. The first is to specify what `<h?>` is. For example, `H(1, ...)` means `<h1>`. The second is its content. The last is its attributes.
-
-```jsx
-// <h1 style={{ color: '#0000ff' }}>This is h1</h1>
-H(1, 'This is h1', { style: { color: '#0000ff' }),
-
-// <h2>This is h2</h2>
-H(2, 'This is h2')
-```
+### Custom Elements
 
 ### HStack, VStack
 
@@ -112,8 +96,20 @@ HStack([
 It will be parsed to such a JSX code:
 
 ```jsx
-<div style={{ display:flex; flexDirection: row }}>
+<div style={{ display: 'flex'; flexDirection: 'row' }}>
   <div>A</div>
   <div>B</div>
 </div>
+```
+
+### Heading
+
+`Heading()` has three parameters. The first is to specify what `<h?>` is. For example, `Heading(1, ...)` means `<h1>`. The second is its content. The last is its attributes.
+
+```jsx
+// <h1 style={{ color: '#0000ff' }}>This is h1</h1>
+Heading(1, ['This is h1'], { style: { color: '#0000ff' }),
+
+// <h2>This is h2</h2>
+Heading(2, 'This is h2')
 ```

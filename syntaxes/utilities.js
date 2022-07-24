@@ -20,3 +20,13 @@ export const getVoidElementTemplate = (tagName, attributes) => {
   const flatAttributes = getFlatAttributes(attributes);
   return `<${tagName} ${flatAttributes} />`
 };
+
+export const getElementTemplate = (tagName, children, attributes) => {
+  const flatAttributes = getFlatAttributes(attributes);
+  const startTag = `<${tagName} ${flatAttributes}>`;
+  const content = children.map(child => {
+    return typeof child === 'object' ? Object.values(child)[0] : child;
+  }).join('');
+  const endTag = `</${tagName}>`;
+  return `${startTag}${content}${endTag}`;
+}

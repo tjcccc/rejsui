@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import View, { HStack, VStack, Div, H, P } from '../index.js';
-import { Area, Hr, Input, Br, Img } from '../syntaxes/void-elements';
+import View, { HStack, VStack, Heading, Div, P, Area, Hr, Input, Br, Img } from '../index.js';
 
 const App = () => {
 
@@ -27,15 +26,15 @@ const App = () => {
 
       {/* SJSX */}
       {View(
-        H(1, 'SwiftUI-like JSX', { style: { color: '#0000ff' } }),
+        Heading(1, ['SwiftUI-like JSX'], { style: { color: '#0000ff' } }),
         Div([
-          P({greeting}),
-          P('Good bye.'),
-          P(2022),
+          P([{greeting}]),
+          P(['Good bye.']),
+          P([2022]),
           HStack([
-            Div('A'),
-            Div('B'),
-            Div('C')
+            Div(['A']),
+            Div(['B']),
+            Div(['C'])
           ]),
           Area({ id: 'area' }),
           Hr({ id: 'line' }),
