@@ -17,26 +17,26 @@ yarn add sjsx-ui
 Import main function and components you need:
 
 ```jsx
-import View, { HStack, VStack, Div, H, P } from 'sjsx-ui';
+import View, { HStack, VStack, Heading, Div, P } from 'sjsx-ui';
 ```
 
-In React component, use `View()` in the `return ()` to replace classic JSX:
+In React component, use `View()` for the `return` to replace classic JSX:
 
 ```jsx
+const [content, setContent] = useState('Yes!');
+
 const App = () => {
-  return (
-    View(
-      // SJSX code
+  return View(
+    // SJSX code
 
-      // h1
-      H(1, 'Title'),
+    // h1
+    Heading(1, 'Title'),
 
-      // div
-      Div([
-        Div('Hello, world'),
-        Div({yourVariable})
-      ])
-    )
+    // div
+    Div([
+      Div('Hello, world'),
+      Div(content)
+    ])
   );
 }
 
@@ -80,7 +80,7 @@ Div([
 
 ### Custom Elements
 
-### HStack, VStack
+#### HStack, VStack
 
 Like SwiftUI, these two components are used for layout.
 
@@ -102,14 +102,37 @@ It will be parsed to such a JSX code:
 </div>
 ```
 
-### Heading
+#### Heading
 
-`Heading()` has three parameters. The first is to specify what `<h?>` is. For example, `Heading(1, ...)` means `<h1>`. The second is its content. The last is its attributes.
+`Heading()` has three parameters. The first is to specify what `<h?>` is. For example, `Heading(1, ...)` means `<h1>`. The second is its single string content. The last is its attributes.
 
 ```jsx
 // <h1 style={{ color: '#0000ff' }}>This is h1</h1>
-Heading(1, ['This is h1'], { style: { color: '#0000ff' }),
+Heading(1, 'This is h1', { style: { color: '#0000ff' }),
 
 // <h2>This is h2</h2>
 Heading(2, 'This is h2')
+```
+
+#### Text
+
+`Text()` will display a string text with `<span></span>` tag. You can set attributes as its second argument.
+
+```jsx
+// <span style={{ color: '#ff0000' }}>Red Text</span>
+
+Text('Red Text', { style: { color: '#ff0000' } })
+```
+
+#### Spacer
+
+`Spacer()` will expand to fill the rest space in a flexbox container.
+
+```jsx
+HStack([
+  Div(),
+  Div(),
+  Spacer(),
+  Div()
+]);
 ```

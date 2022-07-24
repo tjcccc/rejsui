@@ -1,3 +1,7 @@
+const isSingleContent = (content) => {
+  return typeof content === 'string' || typeof content === 'number';
+};
+
 export const getFlatAttributes = (attributes) => {
   if (!attributes || typeof attributes !== 'object') {
     return '';
@@ -24,7 +28,7 @@ export const getVoidElementTemplate = (tagName, attributes) => {
 export const getElementTemplate = (tagName, children, attributes) => {
   const flatAttributes = getFlatAttributes(attributes);
   const startTag = `<${tagName} ${flatAttributes}>`;
-  const content = children.map(child => {
+  const content = isSingleContent(children) ? children : children.map(child => {
     return typeof child === 'object' ? Object.values(child)[0] : child;
   }).join('');
   const endTag = `</${tagName}>`;
