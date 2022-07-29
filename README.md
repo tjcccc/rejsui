@@ -1,6 +1,6 @@
-# sjsx-ui
+# rejsui
 
-SwiftUI-like JSX
+rejsui = JavaScript UI for React
 
 (Developing)
 
@@ -30,7 +30,7 @@ const App = () => {
     // SJSX code
 
     // h1
-    Heading(1, 'Title'),
+    H1('Title'),
 
     // div
     Div([
@@ -70,8 +70,8 @@ There need two arguments. The first one is an array of its content. The second o
 // </div>
 
 Div([
-  H1(['Title']), // or H1('Title')
-  P(['Content'])
+  H1('Title'), // or H1(['Title'])
+  P('Content')
 ], {
   className: 'article',
   style: { padding: '2px 8px' }
@@ -108,7 +108,7 @@ It will be parsed to such a JSX code:
 
 ```jsx
 // <h1 style={{ color: '#0000ff' }}>This is h1</h1>
-Heading(1, 'This is h1', { style: { color: '#0000ff' }),
+Heading(1, 'This is h1', { style: { color: '#0000ff' } }),
 
 // <h2>This is h2</h2>
 Heading(2, 'This is h2')
