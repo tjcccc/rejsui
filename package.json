@@ -1,12 +1,13 @@
 {
   "name": "sjsx-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "SwiftUI-like JSX",
   "main": "index.js",
   "repository": "https://github.com/tjcccc/sjsx.git",
-  "author": "seesaw game <tttjjjccc@gmail.com>",
+  "author": "seesaw game <taoxue28@gmail.com>",
   "license": "MIT",
   "private": false,
+  "keywords": ["rejsui", "react", "javascript", "ui", "swiftui"],
   "dependencies": {
     "html-react-parser": "^1.2.8"
   },
@@ -41,5 +42,5 @@
     "index.js",
     "/syntaxes"
   ],
-  "homepage": "https://github.com/tjcccc/sjsx"
+  "homepage": "https://github.com/tjcccc/rejsui"
 }
