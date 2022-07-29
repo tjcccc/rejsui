@@ -1,7 +1,7 @@
 {
-  "name": "sjsx-ui",
-  "version": "0.3.0",
-  "description": "SwiftUI-like JSX",
+  "name": "rejsui",
+  "version": "0.3.1",
+  "description": "JavaScript UI For React.",
   "main": "index.js",
   "repository": "https://github.com/tjcccc/sjsx.git",
   "author": "seesaw game <taoxue28@gmail.com>",
